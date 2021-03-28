@@ -122,6 +122,46 @@
           }
         }
       }
+    },
+    "hola": {
+      "projectType": "library",
+      "root": "projects/hola",
+      "sourceRoot": "projects/hola/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/hola/tsconfig.lib.json",
+            "project": "projects/hola/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/hola/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/hola/src/test.ts",
+            "tsConfig": "projects/hola/tsconfig.spec.json",
+            "karmaConfig": "projects/hola/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/hola/tsconfig.lib.json",
+              "projects/hola/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "RickAndMortyAPI"
