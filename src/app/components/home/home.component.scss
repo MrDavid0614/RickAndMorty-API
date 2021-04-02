@@ -1,10 +1,14 @@
 main {
-    padding: 18%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translateX(-50%);
 
     @apply flex justify-center items-center;
 
     h1.page-title {
 
-        @apply text-8xl text-gray-900 font-bold;
+        @apply md:text-xl xl:text-8xl lg:text-xl whitespace-nowrap text-gray-900 font-bold;
     }
 }
