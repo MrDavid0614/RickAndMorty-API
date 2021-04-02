@@ -1,0 +1,10 @@
+header {
+    padding: 50px;
+    
+    @apply flex justify-center items-center;
+
+    h1.page-title {
+
+        @apply text-8xl text-gray-900 font-bold;
+    }
+}
