@@ -9,6 +9,10 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'home',
+    redirectTo: ''
+  },
+  {
     path: 'characters',
     component: CharactersComponent
   }
