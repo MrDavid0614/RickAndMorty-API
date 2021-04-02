@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './core/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { CharactersComponent } from './components/characters/characters.component';
 import { CharacterComponent } from './components/character/character.component';
@@ -12,7 +13,8 @@ import { CharacterComponent } from './components/character/character.component';
     AppComponent,
     HomeComponent,
     CharactersComponent,
-    CharacterComponent
+    CharacterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
