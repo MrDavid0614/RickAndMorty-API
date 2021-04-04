@@ -6,7 +6,7 @@
     .logo {
         height: 90px;
 
-        @apply mt-3 ml-8;
+        @apply mt-3 ml-4 sm:ml-6 md:ml-8;
 
         img {
             width: 90px;
