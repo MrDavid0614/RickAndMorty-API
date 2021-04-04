@@ -6,12 +6,7 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "paths": {
-      "hola": [
-        "dist/hola/hola",
-        "dist/hola"
-      ]
-    },
+    "paths": {},
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
