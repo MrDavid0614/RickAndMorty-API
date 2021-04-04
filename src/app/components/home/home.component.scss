@@ -1,4 +1,4 @@
-main {
+div {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -7,8 +7,7 @@ main {
 
     @apply flex justify-center items-center;
 
-    h1.page-title {
-
-        @apply md:text-xl xl:text-8xl lg:text-xl whitespace-nowrap text-gray-900 font-bold;
+    .page-title {
+        @apply text-5xl sm:text-6xl md:text-8xl whitespace-nowrap text-gray-900 font-bold;
     }
 }
