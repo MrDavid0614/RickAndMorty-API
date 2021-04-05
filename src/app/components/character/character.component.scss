@@ -1,0 +1,42 @@
+.character-card{
+    @apply p-8 md:flex bg-gray-100 rounded-xl md:p-0;
+
+    img{
+        @apply w-36 h-36 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto;
+    }
+
+    .character-info{
+        @apply pt-4 pb-2 pl-2 pr-4 text-center;
+
+        .character-name{
+            @apply text-xl text-center font-bold;
+        }
+
+        .character-status-container{
+            @apply flex justify-center gap-1 mt-2 mb-2;
+
+            .alive{
+                @apply w-4 h-4 rounded-full mt-1;
+                background-color: green;
+            }
+    
+            .dead{
+                @apply w-4 h-4 rounded-full mt-1;
+                background-color: red;
+            }
+    
+            .unknown{
+                @apply w-4 h-4 rounded-full mt-1;
+                background-color: gray;
+            }
+    
+            .character-status{
+                @apply text-xl font-bold md:font-normal;
+            }
+        }
+
+        .character-species{
+            @apply text-xl;
+        }
+    } 
+}

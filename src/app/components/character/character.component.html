@@ -1,1 +1,15 @@
-<p>character works!</p>
+<div class="character-card">
+    <img [src]="character.image" alt="{{ character.name }} image">
+    <div class="character-info">
+        <h3 class="character-name">{{ character.name }}</h3>
+        <div class="character-status-container">
+            <div class="{{ character.status | lowercase}}"></div>
+            <p class="character-status">{{ character.status | titlecase }}</p>
+        </div>
+        <p class="character-species">{{ character.species | titlecase}}</p>
+        <p class="text-gray-500">Last known location:</p>
+        <p>{{ character.location }}</p>
+        <p class="text-gray-500">First seen in:</p>
+        <p>{{ character.firstEpisode }}</p>
+    </div>
+</div>
