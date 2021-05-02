@@ -15,6 +15,6 @@
 
     .menu-option {
 
-        @apply text-2xl mt-6 mr-8 cursor-pointer dark:text-white hover:text-yellow-500;
+        @apply text-2xl mt-6 mr-8 cursor-pointer dark:text-white hover:text-yellow-500 dark:hover:text-yellow-500;
     }
 }

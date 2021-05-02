@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AppService } from './shared/services/app.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'RickAndMortyAPI';
+export class AppComponent implements OnInit{
+  public theme: string;
+  appService: AppService;
+
+  constructor(appService: AppService){
+    this.appService = appService;
+    this.theme = appService.theme;
+  }
+
+  ngOnInit(){
+    console.log(this.theme);
+  }
+
+  changeTheme(): void {
+    this.appService.changeTheme();
+  }
+
 }

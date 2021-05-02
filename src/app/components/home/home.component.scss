@@ -8,6 +8,6 @@ div {
     @apply flex justify-center items-center;
 
     .page-title {
-        @apply text-5xl sm:text-6xl md:text-8xl whitespace-nowrap text-gray-900 font-bold;
+        @apply text-5xl sm:text-6xl md:text-8xl whitespace-nowrap text-gray-900 dark:text-white font-bold;
     }
 }

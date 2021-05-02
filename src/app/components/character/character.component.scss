@@ -1,5 +1,5 @@
 .character-card{
-    @apply p-8 md:flex bg-gray-100 rounded-xl md:p-0;
+    @apply p-8 md:flex rounded-xl md:p-0 bg-gray-200 dark:bg-gray-700 dark:text-white;
 
     img{
         @apply w-36 h-36 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto;
@@ -16,18 +16,17 @@
             @apply flex justify-center gap-1 mt-2 mb-2;
 
             .alive{
-                @apply w-4 h-4 rounded-full mt-1;
                 background-color: green;
+                @apply w-4 h-4 rounded-full mt-1;
             }
     
             .dead{
-                @apply w-4 h-4 rounded-full mt-1;
                 background-color: red;
+                @apply w-4 h-4 rounded-full mt-1;
             }
     
             .unknown{
-                @apply w-4 h-4 rounded-full mt-1;
-                background-color: gray;
+                @apply w-4 h-4 rounded-full mt-1 bg-gray-500;
             }
     
             .character-status{
