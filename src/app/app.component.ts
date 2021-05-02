@@ -8,19 +8,20 @@ import { AppService } from './shared/services/app.service';
 })
 export class AppComponent implements OnInit{
   public theme: string;
-  appService: AppService;
+  private appService: AppService;
+  private body: HTMLBodyElement = document.querySelector('body');
 
   constructor(appService: AppService){
     this.appService = appService;
     this.theme = appService.theme;
+    this.body.classList.replace(this.body.className, appService.getThemeFromLocalStorage());
   }
 
-  ngOnInit(){
-    console.log(this.theme);
-  }
+  ngOnInit(){ }
 
   changeTheme(): void {
     this.appService.changeTheme();
+    this.theme = this.appService.theme;
   }
 
 }

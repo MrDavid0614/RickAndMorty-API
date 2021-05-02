@@ -22,7 +22,6 @@ export class CharactersComponent implements OnInit, OnDestroy {
 
     this.querySubscription = this.characterService.getCharacters(page, filter).subscribe((characters: any)=>{
       this.characters = characters;
-      console.log(characters);
     })
 
   }
