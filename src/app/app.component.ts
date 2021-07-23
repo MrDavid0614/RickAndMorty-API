@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { AppService } from './shared/services/app.service';
 
 @Component({
@@ -7,20 +7,23 @@ import { AppService } from './shared/services/app.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  public theme: string;
   private appService: AppService;
-  private body: HTMLBodyElement = document.querySelector('body');
+  private body: HTMLBodyElement;
+  public theme: string;
 
-  constructor(appService: AppService){
+  constructor(private el: ElementRef, private renderer: Renderer2, appService: AppService){
     this.appService = appService;
     this.theme = appService.theme;
-    this.body.classList.replace(this.body.className, appService.getThemeFromLocalStorage());
+    this.body = this.el.nativeElement.closest('body');
+
+    this.renderer.removeAttribute(this.body, 'class');
+    this.renderer.addClass(this.body, appService.getThemeFromLocalStorage());
   }
 
   ngOnInit(){ }
 
   changeTheme(): void {
-    this.appService.changeTheme();
+    this.appService.changeTheme(this.body);
     this.theme = this.appService.theme;
   }
 
