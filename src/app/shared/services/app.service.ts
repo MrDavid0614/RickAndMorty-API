@@ -5,11 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AppService {
 
-  theme: string = localStorage.getItem('theme') 
-                  ? 
-                    localStorage.getItem('theme') 
-                  : 
-                    document.querySelector('body').className;
+  theme: string = localStorage.getItem('theme') || document.querySelector('body').className;
 
   constructor() {
     this.saveThemeConfigToLocalStorage();
@@ -23,16 +19,15 @@ export class AppService {
     return this.theme;
   }
 
-  changeTheme(): void {
-    const body = document.querySelector('body');
+  changeTheme(body: HTMLBodyElement): void {
 
     if(body.classList.contains('light')){
       this.theme = 'dark';
-      body.classList.replace('light', 'dark');
+      body.classList.replace('light', this.theme);
     }
     else{
       this.theme = 'light';
-      body.classList.replace('dark', 'light');
+      body.classList.replace('dark', this.theme);
     }
 
     this.saveThemeConfigToLocalStorage();

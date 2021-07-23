@@ -25,8 +25,7 @@ export class CharacterService {
     .valueChanges
     .pipe(
       map(({ data }: any)=>{
-
-        const characters = data.characters.results.map((character: any) => {
+        const characters: Character[] = data.characters.results.map((character: any) => {
           const { name, image, status, species, location:locationObject, episode:episodes } = character;
           const location: string = locationObject.name;
           const firstEpisode: string = episodes[0].name;
@@ -35,6 +34,6 @@ export class CharacterService {
 
         return characters;
       })
-    )
+    );
   }
 }
